@@ -36,7 +36,7 @@ socialCounterPromise.then(function() {
 Install Grunt CLI <br>
 `npm install -g grunt-cli`
 
-Install the dependences
+Install the dependences <br>
 `npm install`
 
 ## Contributing
