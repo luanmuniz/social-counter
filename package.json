@@ -15,7 +15,7 @@
 	"bugs": "https://github.com/luanmuniz/social-counter/issues",
 	"contributors": "https://github.com/luanmuniz/social-counter/graphs/contributors",
 	"scripts": {
-		"test": "grunt -v test"
+		"test": "grunt -v"
 	},
 	"keywords": [ "social media", "counter", "facebook", "like", "pinterest", "followers", "twitter" ],
 	"main": "index.js",
