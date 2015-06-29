@@ -25,9 +25,9 @@ socialCounterPromise.then(function() {
 		facebookNumber = socialCounter.getFacebook(),
 		pinterestNumber = socialCounter.getPinterest();
 
-	console.log(twitterNumber); // return a interget with the number of followers you have on twitter
-	console.log(facebookNumber); // return a interget with the number of likes your page on twitter
-	console.log(pinterestNumber); // return a interget with the number of followers you have on pinterest
+	console.log(twitterNumber); // return a integer with the number of followers you have on twitter
+	console.log(facebookNumber); // return a integer with the number of likes your page on twitter
+	console.log(pinterestNumber); // return a integer with the number of followers you have on pinterest
 });
 ```
 
