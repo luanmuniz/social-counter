@@ -25,7 +25,7 @@ socialHelper = {
 		var requestArray = [];
 
 		if(this.opt.facebook) {
-			requestArray.push( request('http://graph.facebook.com/' + this.opt.facebook) );
+			requestArray.push( request('http://api.facebook.com/restserver.php?format=json&method=links.getStats&urls=http://facebook.com/' + this.opt.facebook) );
 		}
 
 		if(this.opt.pinterest) {
@@ -47,14 +47,15 @@ socialHelper = {
 		return Promise.all(requestArray)
 			.then(function(res) {
 
-				var metaData, thisNumber, thisJson;
+				var metaData, thisNumber;
 
 				res.forEach(function(thisRequest) {
 
-					if(thisRequest.request.uri.host === 'graph.facebook.com') {
-						thisJson = JSON.parse(thisRequest.body);
-						if( thisJson && thisJson.likes ) {
-							classe.socialNumbers.facebook = thisJson.likes;
+					if(thisRequest.request.uri.host === 'api.facebook.com') {
+						metaData = JSON.parse(thisRequest.body);
+						if( metaData[0] ) {
+							thisNumber = metaData[0];
+							socialHelper.socialNumbers.facebook = parseInt(thisNumber.like_count, 10);
 						}
 					}
 
@@ -62,7 +63,7 @@ socialHelper = {
 						metaData = thisRequest.body.match(/followers_count\&quot\;\:[0-9]+\,\&quot/);
 						if( metaData ) {
 							thisNumber = metaData[0].match(/[0-9]+/);
-							classe.socialNumbers.twitter = thisNumber[0];
+							socialHelper.socialNumbers.twitter = parseInt(thisNumber[0], 10);
 						}
 					}
 
@@ -70,7 +71,7 @@ socialHelper = {
 						metaData = thisRequest.body.match(/<meta property="pinterestapp:followers" name="pinterestapp:followers" content="[0-9]+" data-app>/);
 						if( metaData ) {
 							thisNumber = metaData[0].match(/[0-9]+/);
-							classe.socialNumbers.pinterest = thisNumber[0];
+							socialHelper.socialNumbers.pinterest = parseInt(thisNumber[0], 10);
 						}
 					}
 
