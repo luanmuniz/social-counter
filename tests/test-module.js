@@ -6,13 +6,15 @@ var socialCounter = require('../index.js'),
 module.exports = {
 
 	setUp: function(callback) {
-		thisSocial = socialCounter.init({
-			'facebook': 'zimpme',
-			'pinterest': 'rafael_braga',
-			'twitter': 'lluanmuniz'
-		});
-
+		this.foo = 'bar';
 		callback();
+	},
+
+	isNodeUnitWorking: function(test) {
+		test.expect(2);
+		test.ok(true, 'NodeUnit should be working');
+		test.equal(this.foo, 'bar', 'Setup should be working');
+		test.done();
 	},
 
 	getFacebookNumber: function(test) {
@@ -34,15 +36,19 @@ module.exports = {
 	},
 
 	testAllNumbers: function(test) {
-		thisSocial.then(function() {
+		socialCounter.init({
+			'facebook': 'zimprecompensas',
+			'pinterest': 'rafael_braga',
+			'twitter': 'lluanmuniz'
+		}).then(function() {
 			var twitterNumber = socialCounter.getTwitter(),
 				facebookNumber = socialCounter.getFacebook(),
 				pinterestNumber = socialCounter.getPinterest();
 
 			test.expect(3);
-			test.ok(twitterNumber, 'Its all ok with twitter');
-			test.ok(facebookNumber, 'Its all ok with facebook');
-			test.ok(pinterestNumber, 'Its all ok with pinterest');
+			test.equal(typeof(twitterNumber), 'number', 'Its all ok with twitter');
+			test.equal(typeof(facebookNumber), 'number', 'Its all ok with facebook');
+			test.equal(typeof(pinterestNumber), 'number', 'Its all ok with pinterest');
 			test.done();
 		});
 	}

@@ -1,39 +1,46 @@
 {
-	"name": "social-counter",
-	"version": "0.1.0",
-	"description": "Module that give you the numbers of followers and likes you have",
-	"author": "Luan Muniz <luan@luanmuniz.com.br>",
-	"homepage": "https://github.com/luanmuniz/social-counter",
-	"repository": {
-		"type": "git",
-		"url": "git:git@github.com:luanmuniz/social-counter.git"
-	},
-	"licenses": [{
-		"type": "MIT",
-		"url": "http://luanmuniz.mit-license.org/"
-	}],
-	"bugs": "https://github.com/luanmuniz/social-counter/issues",
-	"contributors": "https://github.com/luanmuniz/social-counter/graphs/contributors",
-	"scripts": {
-		"test": "grunt -v"
-	},
-	"keywords": [ "social media", "counter", "facebook", "like", "pinterest", "followers", "twitter" ],
-	"main": "index.js",
-	"engines": {
-		"node": "0.10.*"
-	},
-	"dependencies": {
-		"promise": "^7.0.3",
-		"request": "^2.48.0"
-	},
-	"devDependencies": {
-		"grunt": "~0.4.5",
-		"grunt-develop": "~0.4.0",
-		"time-grunt": "~0.4.0",
-		"load-grunt-tasks": "~0.6.0",
-		"grunt-contrib-watch": "~0.6.1",
-		"grunt-contrib-jshint": "~0.10.0",
-		"grunt-jscs": "~0.6.1",
-		"grunt-contrib-nodeunit": "~0.4.1"
-	}
+  "name": "social-counter",
+  "version": "0.1.0",
+  "description": "Module that give you the numbers of followers and likes you have",
+  "author": "Luan Muniz <luan@luanmuniz.com.br>",
+  "homepage": "https://github.com/luanmuniz/social-counter",
+  "repository": {
+    "type": "git",
+    "url": "git:git@github.com:luanmuniz/social-counter.git"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://luanmuniz.mit-license.org/"
+    }
+  ],
+  "bugs": "https://github.com/luanmuniz/social-counter/issues",
+  "contributors": "https://github.com/luanmuniz/social-counter/graphs/contributors",
+  "scripts": {
+    "test": "gulp test-full"
+  },
+  "keywords": [
+    "social media",
+    "counter",
+    "facebook",
+    "like",
+    "pinterest",
+    "followers",
+    "twitter"
+  ],
+  "main": "index.js",
+  "engines": {
+    "node": "0.10.*"
+  },
+  "dependencies": {
+    "promise": "^7.0.3",
+    "request": "^2.48.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.8.11",
+    "gulp-duration": "0.0.0",
+    "gulp-jscs": "^1.6.0",
+    "gulp-jshint": "^1.11.0",
+    "gulp-nodeunit": "0.0.5"
+  }
 }

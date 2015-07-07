@@ -1,6 +1,8 @@
 Social Counter
 ===================
-[![Build Status][travis-image]][travis-url] [![Dependency Status][depstat-image]][depstat-url]
+[![Build Status][travis-image]][travis-url] [![Dependency Status][depstat-image]][depstat-url] [![NPM Version][node-image]][node-url]
+
+[![Node Build][nodei-image]][nodei-url]
 
 Module that give you the numbers of followers and likes you have
 
@@ -55,3 +57,7 @@ Having trouble? Or new ideas? Post a new issue! We will be glad to help you!
 [travis-image]: https://travis-ci.org/luanmuniz/social-counter.png?branch=master
 [depstat-url]: https://david-dm.org/luanmuniz/social-counter
 [depstat-image]: https://david-dm.org/luanmuniz/social-counter.png
+[nodei-image]: https://nodei.co/npm/social-counter.png
+[nodei-url]: https://nodei.co/npm/social-counter
+[node-image]: https://badge.fury.io/js/social-counter.svg
+[node-url]: http://badge.fury.io/js/social-counter
