@@ -38,7 +38,7 @@ module.exports = {
 	testAllNumbers: function(test) {
 		socialCounter.init({
 			'facebook': 'zimprecompensas',
-			'pinterest': 'rafael_braga',
+			'pinterest': 'lenineon',
 			'twitter': 'lluanmuniz'
 		}).then(function() {
 			var twitterNumber = socialCounter.getTwitter(),
