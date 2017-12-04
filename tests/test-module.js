@@ -17,12 +17,6 @@ module.exports = {
 		test.done();
 	},
 
-	getFacebookNumber: function(test) {
-		test.expect(1);
-		test.equal(typeof(socialCounter.getFacebook), 'function', 'getFacebook Exist');
-		test.done();
-	},
-
 	getTwitterNumber: function(test) {
 		test.expect(1);
 		test.equal(typeof(socialCounter.getTwitter), 'function', 'getTwitter Exist');
@@ -37,17 +31,14 @@ module.exports = {
 
 	testAllNumbers: function(test) {
 		socialCounter.init({
-			'facebook': 'zimprecompensas',
 			'pinterest': 'lenineon',
 			'twitter': 'lluanmuniz'
 		}).then(function() {
 			var twitterNumber = socialCounter.getTwitter(),
-				facebookNumber = socialCounter.getFacebook(),
 				pinterestNumber = socialCounter.getPinterest();
 
-			test.expect(3);
+			test.expect(2);
 			test.equal(typeof(twitterNumber), 'number', 'Its all ok with twitter');
-			test.equal(typeof(facebookNumber), 'number', 'Its all ok with facebook');
 			test.equal(typeof(pinterestNumber), 'number', 'Its all ok with pinterest');
 			test.done();
 		});

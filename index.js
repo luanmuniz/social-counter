@@ -24,10 +24,6 @@ socialHelper = {
 
 		var requestArray = [];
 
-		if(this.opt.facebook) {
-			requestArray.push( request('http://api.facebook.com/restserver.php?format=json&method=links.getStats&urls=http://facebook.com/' + this.opt.facebook) );
-		}
-
 		if(this.opt.pinterest) {
 			requestArray.push( request('http://www.pinterest.com/' + this.opt.pinterest) );
 		}
@@ -50,14 +46,6 @@ socialHelper = {
 				var metaData, thisNumber;
 
 				res.forEach(function(thisRequest) {
-
-					if(thisRequest.request.uri.host === 'api.facebook.com') {
-						metaData = JSON.parse(thisRequest.body);
-						if( metaData[0] ) {
-							thisNumber = metaData[0];
-							socialHelper.socialNumbers.facebook = parseInt(thisNumber.like_count, 10);
-						}
-					}
 
 					if(thisRequest.request.uri.host === 'twitter.com') {
 						metaData = thisRequest.body.match(/followers_count\&quot\;\:[0-9]+\,\&quot/);
@@ -87,19 +75,6 @@ socialHelper = {
 			code: code,
 			message: message
 		};
-	},
-
-	getFacebook: function() {
-		if(!this.opt.facebook) {
-			return this.returnError(1, 'You didnt pass the facebook username');
-		}
-
-		if(!this.socialNumbers.facebook) {
-			return this.returnError(1, 'Some error with facebook');
-		}
-
-		return this.socialNumbers.facebook;
-
 	},
 
 	getTwitter: function() {

@@ -14,7 +14,6 @@ var socialCounter = require('social-counter'),
 	socialCounterPromise;
 
 	socialCounterPromise = socialCounter.init({
-		'facebook': {{YourFacebookPageID}},
 		'pinterest': {{YourPinterestUsername}},
 		'twitter': {{YourTwitterUsername}}
 	});
@@ -24,11 +23,9 @@ After this, the `socialCounterPromise` will return a promise with the return and
 ```javascript
 socialCounterPromise.then(function() {
 	var twitterNumber = socialCounter.getTwitter(),
-		facebookNumber = socialCounter.getFacebook(),
 		pinterestNumber = socialCounter.getPinterest();
 
 	console.log(twitterNumber); // return a integer with the number of followers you have on twitter
-	console.log(facebookNumber); // return a integer with the number of likes your page on facebook
 	console.log(pinterestNumber); // return a integer with the number of followers you have on pinterest
 });
 ```
