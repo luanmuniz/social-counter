@@ -17,7 +17,9 @@
   "bugs": "https://github.com/luanmuniz/social-counter/issues",
   "contributors": "https://github.com/luanmuniz/social-counter/graphs/contributors",
   "scripts": {
-    "test": "gulp test-full"
+    "test": "gulp test-full",
+    "preversion": "rm -rf ./node_modules/ && npm install && npm test",
+    "postversion": "git push && npm publish --access=public && git push --tags"
   },
   "keywords": [
     "social media",
