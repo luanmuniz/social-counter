@@ -1,5 +1,7 @@
 Social Counter
 ===================
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/luanmuniz/social-counter.svg)](https://greenkeeper.io/)
 [![Build Status][travis-image]][travis-url] [![Dependency Status][depstat-image]][depstat-url] [![NPM Version][node-image]][node-url]
 
 [![Node Build][nodei-image]][nodei-url]
